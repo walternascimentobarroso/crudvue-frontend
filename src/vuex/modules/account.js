@@ -15,23 +15,23 @@ export default {
   },
   actions: {
     getAccounts (context) {
-      Vue.http.get('api/accounts').then(response => {
+      Vue.http.get('http://localhost:8000/api/category').then(response => {
         context.commit('updateAccountList', response.data)
       })
     },
     getAccount (context, id) {
-      Vue.http.get('api/accounts/' + id).then(response => {
+      Vue.http.get('http://localhost:8000/api/category/' + id).then(response => {
         context.commit('updateAccountView', response.data)
       })
     },
     newAccount (context, data) {
-      Vue.http.post('api/accounts/', data)
+      Vue.http.post('http://localhost:8000/api/category/', data)
     },
     updateAccount (context, params) {
-      Vue.http.put('api/accounts/' + params.id, params.data)
+      Vue.http.put('http://localhost:8000/api/category/' + params.id, params.data)
     },
     removeAccount (context, id) {
-      Vue.http.delete('api/accounts/' + id)
+      Vue.http.delete('http://localhost:8000/api/category/' + id)
     }
   }
 }
