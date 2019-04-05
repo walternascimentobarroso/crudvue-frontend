@@ -1,6 +1,9 @@
 <template>
     <div class="content">
       <div class="box">
+              <div class="card-action">
+        <a class="btn btn-success btn-lg btn-block" href="#/contas/novo">Nova Categoria</a>
+      </div>
             <div class="box-header">
               <h3 class="box-title">Lista de Categorias</h3>
             </div>
@@ -25,9 +28,6 @@
             </div>
             <!-- /.box-body -->
           </div>
-      <div class="card-action">
-        <a href="#/contas/novo">Nova conta</a>
-      </div>
     </div>
 </template>
 
