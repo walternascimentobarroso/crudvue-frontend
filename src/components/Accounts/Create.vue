@@ -16,14 +16,6 @@ export default {
         this.$router.push('/contas')
       })
     }
-  },
-  computed: {
-    banks () {
-      return this.$store.state.bank.bankList
-    }
-  },
-  created () {
-    this.$store.dispatch('getBanks')
   }
 }
 

@@ -41,7 +41,6 @@ export default {
   },
   computed: {
     accounts () {
-      console.log(this.$store.state.account.accountList)
       return this.$store.state.account.accountList
     }
   },

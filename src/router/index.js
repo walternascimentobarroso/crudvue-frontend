@@ -8,8 +8,8 @@ const routes = [
   { path: '/', name: 'HelloWorld', component: HelloWorld },
   { path: '/contas', component: AccountsList },
   { path: '/contas/novo', component: AccountsCreate },
-  { path: '/contas/:id', component: AccountsView },
-  { path: '/contas/:id/editar', component: AccountsEdit }
+  { path: '/contas/editar/:id', component: AccountsEdit },
+  { path: '/contas/:id', component: AccountsView }
 ]
 
 export default routes

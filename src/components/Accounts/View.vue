@@ -1,37 +1,26 @@
 <template lang="html">
-    <div class="row">
-        <div class="content-header">
-            <h1>Conta título <small>Detalhes</small></h1>
-            <div class="grey-text">
-                <small>
-                    <a href="#/">iFinance</a> >
-                    <a href="#/contas">Suas contas</a> >
-                    <span>Suas contas</span>
-                </small>
-            </div>
-        </div>
-        <div class="card col s12">
-            <div class="card-content">
+    <div class="content">
+        <div class="card">
+            <div class="card-body">
                 <div class="row">
-                    <div class="col s9">
-                        <div class="card-title">Detalhes da conta</div>
-                        <p>Agência: {{ account.agency }} / Conta: {{ account.account_number }} </p>
-                        <p>Banco: {{ bank.title }} - {{ bank.code }}</p>
-                        <p>Valor inicial da conta: R$ {{ account.balance_initial }}</p>
-                    </div>
-                    <div class="col s3 right-align">
-                        <p>Saldo: <span class="btn disabled">R$ {{ account.balance }}</span></p>
+                    <div class="col-lg-12">
+                        <h3 class="card-title">Detalhes da categoria</h3>
+                        <p><strong>Descrição:</strong> {{ account.body.data.description }} </p>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col s12">
-                        <a :href="'#/contas/{{ account.id }}/editar'" class="btn blue">Editar</a>
-                        <a href="" class="btn red" @click.prevent="remove(account.id)">Excluir</a>
+                    <div class="col-lg-2">
+                        <a :href="'#/contas/editar/'+account.body.data.id" class="btn btn-warning btn-block">Editar</a>
+                    </div>
+                    <div class="col-lg-2">
+                        <a href="" class="btn btn-danger btn-block" @click.prevent="remove(account.body.data.id)">Excluir</a>
                     </div>
                 </div>
-            </div>
-            <div class="card-action">
-                <a href="#/contas">Voltar</a>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <a href="#/contas" class="btn btn-info btn-block">Voltar</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -42,17 +31,15 @@ export default {
   name: 'accounts-view',
   methods: {
     remove: function (id) {
-      this.$store.dispatch('removeAccount', id).then(() => {
-        this.$router.push('/contas')
-      })
+      this.$store.dispatch('removeAccount', this.$route.params.id)
+        .then(() => {
+          this.$router.push('/contas')
+        })
     }
   },
   computed: {
     account () {
-      return this.$store.state.account.accountView
-    },
-    bank () {
-      return this.account.bank || {}
+      return this.$store.state.account.accountView || {}
     }
   },
   created () {
@@ -60,9 +47,3 @@ export default {
   }
 }
 </script>
-
-<style>
-tbody tr {
-  cursor: pointer;
-}
-</style>

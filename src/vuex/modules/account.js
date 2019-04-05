@@ -21,11 +21,11 @@ export default {
     },
     getAccount (context, id) {
       Vue.http.get('http://localhost:8000/api/category/' + id).then(response => {
-        context.commit('updateAccountView', response.data)
+        context.commit('updateAccountView', response)
       })
     },
     newAccount (context, data) {
-      Vue.http.post('http://localhost:8000/api/category/', data)
+      Vue.http.post('http://localhost:8000/api/category', data)
     },
     updateAccount (context, params) {
       Vue.http.put('http://localhost:8000/api/category/' + params.id, params.data)
