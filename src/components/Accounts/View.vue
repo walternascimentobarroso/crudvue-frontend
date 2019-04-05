@@ -33,7 +33,9 @@ export default {
     remove: function (id) {
       this.$store.dispatch('removeAccount', this.$route.params.id)
         .then(() => {
-          this.$router.push('/contas')
+          setTimeout(() => {
+            this.$router.push('/contas')
+          }, 100)
         })
     }
   },

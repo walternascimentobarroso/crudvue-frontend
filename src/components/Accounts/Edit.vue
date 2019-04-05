@@ -16,7 +16,9 @@ export default {
         }
       }
       this.$store.dispatch('updateAccount', params).then(() => {
-        this.$router.push('/contas')
+        setTimeout(() => {
+          this.$router.push('/contas')
+        }, 100)
       })
     }
   },

@@ -13,7 +13,9 @@ export default {
   methods: {
     save () {
       this.$store.dispatch('newAccount', this.account).then(() => {
-        this.$router.push('/contas')
+        setTimeout(() => {
+          this.$router.push('/contas')
+        }, 100)
       })
     }
   }
