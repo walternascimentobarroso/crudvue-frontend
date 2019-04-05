@@ -215,7 +215,7 @@
               </li>
             </ul>
           </li>
-          <!-- User Account: style can be found in dropdown.less -->
+          <!-- User Category: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="https://avatars2.githubusercontent.com/u/8291055?s=460&v=4" class="user-image" alt="User Image">
@@ -301,7 +301,7 @@
           </a>
         </li>
         <li>
-          <a href="#/contas">
+          <a href="#/category">
             <i class="fa fa-th"></i> <span>Categorias</span>
             <span class="pull-right-container">
               <small class="label pull-right bg-green"></small>

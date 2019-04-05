@@ -2,35 +2,35 @@ import Vue from 'vue'
 
 export default {
   state: {
-    accountList: [],
-    accountView: {}
+    categoryList: [],
+    categoryView: {}
   },
   mutations: {
-    updateAccountList (state, data) {
-      state.accountList = data
+    updateCategoryList (state, data) {
+      state.categoryList = data
     },
-    updateAccountView (state, data) {
-      state.accountView = data
+    updateCategoryView (state, data) {
+      state.categoryView = data
     }
   },
   actions: {
-    getAccounts (context) {
+    getCategories (context) {
       Vue.http.get('http://localhost:8000/api/category').then(response => {
-        context.commit('updateAccountList', response.data)
+        context.commit('updateCategoryList', response.data)
       })
     },
-    getAccount (context, id) {
+    getCategory (context, id) {
       Vue.http.get('http://localhost:8000/api/category/' + id).then(response => {
-        context.commit('updateAccountView', response)
+        context.commit('updateCategoryView', response)
       })
     },
-    newAccount (context, data) {
+    newCategory (context, data) {
       Vue.http.post('http://localhost:8000/api/category', data)
     },
-    updateAccount (context, params) {
+    updateCategory (context, params) {
       Vue.http.put('http://localhost:8000/api/category/' + params.id, params.data)
     },
-    removeAccount (context, id) {
+    removeCategory (context, id) {
       Vue.http.delete('http://localhost:8000/api/category/' + id)
     }
   }

@@ -1,10 +1,10 @@
 <script>
 export default {
-  name: 'account-create',
+  name: 'category-create',
   data () {
     return {
       sub_title: 'Criando conta',
-      account: {
+      category: {
         'balance': 0
       }
     }
@@ -12,9 +12,9 @@ export default {
   template: require('./form.html'),
   methods: {
     save () {
-      this.$store.dispatch('newAccount', this.account).then(() => {
+      this.$store.dispatch('newCategory', this.category).then(() => {
         setTimeout(() => {
-          this.$router.push('/contas')
+          this.$router.push('/category')
         }, 100)
       })
     }

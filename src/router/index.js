@@ -1,15 +1,15 @@
 import HelloWorld from '@/components/HelloWorld'
-import AccountsList from '../components/Accounts/List'
-import AccountsCreate from '../components/Accounts/Create.vue'
-import AccountsEdit from '../components/Accounts/Edit.vue'
-import AccountsView from '../components/Accounts/View.vue'
+import CategorysList from '../components/Category/List'
+import CategorysCreate from '../components/Category/Create.vue'
+import CategorysEdit from '../components/Category/Edit.vue'
+import CategorysView from '../components/Category/View.vue'
 
 const routes = [
   { path: '/', name: 'HelloWorld', component: HelloWorld },
-  { path: '/contas', component: AccountsList },
-  { path: '/contas/novo', component: AccountsCreate },
-  { path: '/contas/editar/:id', component: AccountsEdit },
-  { path: '/contas/:id', component: AccountsView }
+  { path: '/category', component: CategorysList },
+  { path: '/category/novo', component: CategorysCreate },
+  { path: '/category/editar/:id', component: CategorysEdit },
+  { path: '/category/:id', component: CategorysView }
 ]
 
 export default routes

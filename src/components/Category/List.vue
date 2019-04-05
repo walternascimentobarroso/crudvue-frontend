@@ -2,7 +2,7 @@
     <div class="content">
       <div class="box">
               <div class="card-action">
-        <a class="btn btn-success btn-lg btn-block" href="#/contas/novo">Nova Categoria</a>
+        <a class="btn btn-success btn-lg btn-block" href="#/category/novo">Nova Categoria</a>
       </div>
             <div class="box-header">
               <h3 class="box-title">Lista de Categorias</h3>
@@ -18,9 +18,9 @@
                     </tr>
                      </thead>
                 <tbody>
-                <tr v-for="account in accounts.data" :key="account.id" @click="goTo(account.id)">
-                  <th>{{ account.id }}</th>
-                  <th>{{ account.description }}</th>
+                <tr v-for="category in categories.data" :key="category.id" @click="goTo(category.id)">
+                  <th>{{ category.id }}</th>
+                  <th>{{ category.description }}</th>
                   <th> <i class="fa fa-eye"></i> </th>
                 </tr>
                  </tbody>
@@ -33,19 +33,19 @@
 
 <script>
 export default {
-  name: 'accounts',
+  name: 'categorys',
   methods: {
     goTo: function (id) {
-      this.$router.push('/contas/' + id)
+      this.$router.push('/category/' + id)
     }
   },
   computed: {
-    accounts () {
-      return this.$store.state.account.accountList
+    categories () {
+      return this.$store.state.category.categoryList
     }
   },
   created () {
-    this.$store.dispatch('getAccounts')
+    this.$store.dispatch('getCategories')
   }
 }
 </script>

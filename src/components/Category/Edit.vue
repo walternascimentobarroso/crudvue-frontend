@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'account-edit',
+  name: 'category-edit',
   data () {
     return {
       sub_title: 'Editando conta'
@@ -12,23 +12,23 @@ export default {
       var params = {
         id: this.$route.params.id,
         data: {
-          description: this.account.body.data.description
+          description: this.category.body.data.description
         }
       }
-      this.$store.dispatch('updateAccount', params).then(() => {
+      this.$store.dispatch('updateCategory', params).then(() => {
         setTimeout(() => {
-          this.$router.push('/contas')
+          this.$router.push('/category')
         }, 100)
       })
     }
   },
   computed: {
-    account () {
-      return this.$store.state.account.accountView || {}
+    category () {
+      return this.$store.state.category.categoryView || {}
     }
   },
   created () {
-    this.$store.dispatch('getAccount', this.$route.params.id)
+    this.$store.dispatch('getCategory', this.$route.params.id)
   }
 }
 

@@ -1,7 +1,7 @@
-import account from './modules/account'
+import category from './modules/category'
 
 export default {
   modules: {
-    account: account
+    category: category
   }
 }
